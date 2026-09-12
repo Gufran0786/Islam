@@ -1,0 +1,6 @@
+{
+  "name": "Qisas Anbiya",
+  "description": "Stories and biographies of the Prophets (Qisas al-Anbiya) along with the Holy Quran featuring Arabic script, Hinglish transliteration, and authentic Urdu and Hindi translations with bookmarks and offline reader.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
