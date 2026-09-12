@@ -30,6 +30,7 @@ object AppLocaleManager {
     }
 
     private fun getEnglishString(key: String): String = when (key) {
+        "tab_home" -> "Home"
         "tab_anbiya" -> "Prophets"
         "tab_family_tree" -> "Family Tree"
         "tab_quran" -> "Quran"
@@ -55,6 +56,7 @@ object AppLocaleManager {
         "mother" -> "Mother"
         "siblings" -> "Brothers & Sisters"
         "children" -> "Children"
+        "wives" -> "Wife / Wives"
         "era_location" -> "Era & Location"
         "highlights" -> "Highlights"
         "events" -> "Key Life Events"
@@ -79,6 +81,7 @@ object AppLocaleManager {
     }
 
     private fun getHindiString(key: String): String = when (key) {
+        "tab_home" -> "होम"
         "tab_anbiya" -> "अंबिया"
         "tab_family_tree" -> "फैमिली ट्री"
         "tab_quran" -> "क़ुरआन"
@@ -104,6 +107,7 @@ object AppLocaleManager {
         "mother" -> "माता"
         "siblings" -> "भाई और बहनें"
         "children" -> "संतान"
+        "wives" -> "पत्नियां (बीवियां)"
         "era_location" -> "काल और स्थान"
         "highlights" -> "मुख्य सारांश"
         "events" -> "जीवन की मुख्य घटनाएं"
@@ -128,6 +132,7 @@ object AppLocaleManager {
     }
 
     private fun getUrduString(key: String): String = when (key) {
+        "tab_home" -> "ہوم"
         "tab_anbiya" -> "انبیاء"
         "tab_family_tree" -> "شجرۂ نسب"
         "tab_quran" -> "قرآن"
@@ -153,6 +158,7 @@ object AppLocaleManager {
         "mother" -> "والدہ محترمہ"
         "siblings" -> "بھائی اور بہنیں"
         "children" -> "اولاد"
+        "wives" -> "ازواجِ مطہرات / بیویاں"
         "era_location" -> "زمانہ و مقام"
         "highlights" -> "نمایاں جھلکیاں"
         "events" -> "حیات کے اہم واقعات"

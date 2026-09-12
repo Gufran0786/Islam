@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.AccountTree
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.AutoStories
 import androidx.compose.material.icons.filled.EditNote
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
@@ -44,6 +45,8 @@ import com.example.ui.components.SecurityLockScreen
 import com.example.ui.screens.AngelsScreen
 import com.example.ui.screens.BookshelfScreen
 import com.example.ui.screens.DiaryJournalScreen
+import com.example.ui.screens.HomeScreen
+import com.example.ui.screens.LoadingSplashScreen
 import com.example.ui.screens.PrayerTimeScreen
 import com.example.ui.screens.ProphetDetailScreen
 import com.example.ui.screens.ProphetFamilyTreeScreen
@@ -104,6 +107,15 @@ fun MainAppContent(viewModel: MainViewModel) {
         }
     }
 
+    // Loading Splash Screen (Requested by user: App name & "create by Gufran Khan")
+    val isLoadingSplash by viewModel.isLoadingSplash.collectAsStateWithLifecycle()
+    if (isLoadingSplash) {
+        LoadingSplashScreen(
+            onLoadingComplete = { viewModel.dismissSplash() }
+        )
+        return
+    }
+
     // Security Gate: If app lock is enabled and locked, display Security Keypad
     if (readerSettings.isAppLockEnabled && !isAppUnlocked) {
         SecurityLockScreen(
@@ -115,12 +127,11 @@ fun MainAppContent(viewModel: MainViewModel) {
     }
 
     // Handle System Back button
-    BackHandler(enabled = currentScreen != AppScreen.BOOKSHELF) {
+    BackHandler(enabled = currentScreen != AppScreen.HOME) {
         when (currentScreen) {
             AppScreen.PROPHET_DETAIL -> viewModel.navigateTo(AppScreen.BOOKSHELF)
             AppScreen.SURAH_READER -> viewModel.navigateTo(AppScreen.QURAN_INDEX)
-            AppScreen.QURAN_INDEX -> viewModel.navigateTo(AppScreen.BOOKSHELF)
-            else -> viewModel.navigateTo(AppScreen.BOOKSHELF)
+            else -> viewModel.navigateTo(AppScreen.HOME)
         }
     }
 
@@ -134,6 +145,21 @@ fun MainAppContent(viewModel: MainViewModel) {
                     containerColor = palette.surface,
                     contentColor = palette.textPrimary
                 ) {
+                    NavigationBarItem(
+                        selected = currentScreen == AppScreen.HOME,
+                        onClick = { viewModel.navigateTo(AppScreen.HOME) },
+                        icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                        label = { Text(com.example.util.AppLocaleManager.getUiString("tab_home", readerSettings.appLanguage), maxLines = 1) },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = palette.accent,
+                            selectedTextColor = palette.accent,
+                            indicatorColor = palette.accent.copy(alpha = 0.2f),
+                            unselectedIconColor = palette.textSecondary,
+                            unselectedTextColor = palette.textSecondary
+                        ),
+                        modifier = Modifier.testTag("nav_home")
+                    )
+
                     NavigationBarItem(
                         selected = currentScreen == AppScreen.BOOKSHELF,
                         onClick = { viewModel.navigateTo(AppScreen.BOOKSHELF) },
@@ -233,6 +259,12 @@ fun MainAppContent(viewModel: MainViewModel) {
                 .padding(innerPadding)
         ) {
             when (currentScreen) {
+                AppScreen.HOME -> {
+                    HomeScreen(
+                        language = readerSettings.appLanguage,
+                        onNavigate = { viewModel.navigateTo(it) }
+                    )
+                }
                 AppScreen.BOOKSHELF -> {
                     BookshelfScreen(
                         prophets = prophetsList,

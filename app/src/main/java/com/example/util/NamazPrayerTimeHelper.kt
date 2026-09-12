@@ -38,7 +38,10 @@ object NamazPrayerTimeHelper {
      * Calculates prayer times for a given date in milliseconds.
      * Uses standard solar calculation for subcontinent/standard latitude (e.g. 28.6° N, 77.2° E or user zone).
      */
-    fun calculatePrayerTimes(dateTimeMillis: Long): NamazSchedule {
+    fun calculatePrayerTimes(
+        dateTimeMillis: Long,
+        customTimesMap: Map<String, Pair<Int, Int>>? = null
+    ): NamazSchedule {
         val cal = Calendar.getInstance().apply {
             timeInMillis = dateTimeMillis
         }
@@ -98,12 +101,12 @@ object NamazPrayerTimeHelper {
             return sdf.format(Date(timeMillis))
         }
 
-        val fajrMillis = toMillis(fajrMin)
-        val sunriseMillis = toMillis(sunriseMin)
-        val dhuhrMillis = toMillis(solarNoonMinutes + 4)
-        val asrMillis = toMillis(asrMin)
-        val maghribMillis = toMillis(maghribMin)
-        val ishaMillis = toMillis(ishaMin)
+        val fajrMillis = customTimesMap?.get("fajr")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(fajrMin)
+        val sunriseMillis = customTimesMap?.get("sunrise")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(sunriseMin)
+        val dhuhrMillis = customTimesMap?.get("dhuhr")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(solarNoonMinutes + 4)
+        val asrMillis = customTimesMap?.get("asr")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(asrMin)
+        val maghribMillis = customTimesMap?.get("maghrib")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(maghribMin)
+        val ishaMillis = customTimesMap?.get("isha")?.let { toMillis(it.first * 60 + it.second) } ?: toMillis(ishaMin)
 
         val currentMinutesOfDay = cal.get(Calendar.HOUR_OF_DAY) * 60 + cal.get(Calendar.MINUTE)
 

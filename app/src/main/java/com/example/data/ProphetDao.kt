@@ -32,6 +32,8 @@ interface ProphetDao {
            OR fatherName LIKE '%' || :query || '%'
            OR motherName LIKE '%' || :query || '%'
            OR siblings LIKE '%' || :query || '%'
+           OR children LIKE '%' || :query || '%'
+           OR wives LIKE '%' || :query || '%'
            OR summaryHighlights LIKE '%' || :query || '%'
         ORDER BY orderIndex ASC
     """)

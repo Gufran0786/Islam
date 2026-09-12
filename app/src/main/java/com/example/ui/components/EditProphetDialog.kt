@@ -75,6 +75,7 @@ fun EditProphetDialog(
     var motherName by remember { mutableStateOf(prophet?.motherName ?: "") }
     var siblings by remember { mutableStateOf(prophet?.siblings ?: "") }
     var children by remember { mutableStateOf(prophet?.children ?: "") }
+    var wives by remember { mutableStateOf(prophet?.wives ?: "") }
     var eraLocation by remember { mutableStateOf(prophet?.eraLocation ?: "") }
     var summaryHighlights by remember { mutableStateOf(prophet?.summaryHighlights ?: "") }
     var photoUriString by remember { mutableStateOf(prophet?.photoUrlOrRes ?: "img_app_icon") }
@@ -299,6 +300,16 @@ fun EditProphetDialog(
                     )
 
                     OutlinedTextField(
+                        value = wives,
+                        onValueChange = { wives = it },
+                        label = { Text("Biwiyan (Wife / Wives)") },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 8.dp),
+                        singleLine = true
+                    )
+
+                    OutlinedTextField(
                         value = summaryHighlights,
                         onValueChange = { summaryHighlights = it },
                         label = { Text("Mukhya Khulasa (Summary Highlights)") },
@@ -336,12 +347,13 @@ fun EditProphetDialog(
                                     motherName = motherName.trim(),
                                     siblings = siblings.trim(),
                                     children = children.trim(),
+                                    wives = wives.trim(),
                                     eraLocation = eraLocation.trim(),
                                     summaryHighlights = summaryHighlights.trim(),
                                     photoUrlOrRes = photoUriString,
                                     lastUpdated = System.currentTimeMillis()
                                 ) ?: ProphetEntity(
-                                    orderIndex = 26,
+                                    orderIndex = 43,
                                     nameRoman = nameRoman.trim(),
                                     nameArabic = nameArabic.trim().ifBlank { nameRoman },
                                     title = title.trim(),
@@ -350,6 +362,7 @@ fun EditProphetDialog(
                                     motherName = motherName.trim(),
                                     siblings = siblings.trim(),
                                     children = children.trim(),
+                                    wives = wives.trim(),
                                     eraLocation = eraLocation.trim(),
                                     summaryHighlights = summaryHighlights.trim(),
                                     photoUrlOrRes = photoUriString

@@ -89,6 +89,7 @@ fun ProphetDetailScreen(
     val siblingsLabel = com.example.util.AppLocaleManager.getUiString("siblings", language)
     val eraLabel = com.example.util.AppLocaleManager.getUiString("era_location", language)
     val childrenLabel = com.example.util.AppLocaleManager.getUiString("children", language)
+    val wivesLabel = com.example.util.AppLocaleManager.getUiString("wives", language)
     val summaryTitle = com.example.util.AppLocaleManager.getUiString("summary_highlights", language)
     val keyEventsTitle = com.example.util.AppLocaleManager.getUiString("key_events", language)
     val pageLabel = com.example.util.AppLocaleManager.getUiString("page", language)
@@ -290,6 +291,10 @@ fun ProphetDetailScreen(
                                 DetailRow("🤝 $siblingsLabel:", prophet.siblings, palette)
                                 Divider(color = palette.border.copy(alpha = 0.5f), thickness = 0.5.dp, modifier = Modifier.padding(vertical = 4.dp))
                                 DetailRow("👶 $childrenLabel:", prophet.children, palette)
+                                if (prophet.wives.isNotBlank()) {
+                                    Divider(color = palette.border.copy(alpha = 0.5f), thickness = 0.5.dp, modifier = Modifier.padding(vertical = 4.dp))
+                                    DetailRow("💍 $wivesLabel:", prophet.wives, palette)
+                                }
                             }
                         }
 

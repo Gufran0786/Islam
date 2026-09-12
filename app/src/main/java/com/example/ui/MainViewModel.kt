@@ -30,6 +30,7 @@ import java.io.File
 import java.util.Calendar
 
 enum class AppScreen {
+    HOME,
     BOOKSHELF,
     PROPHET_DETAIL,
     FAMILY_TREE,
@@ -112,8 +113,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), quranRepository.getAllSurahs())
 
     // Navigation & Screen selection
-    private val _currentScreen = MutableStateFlow(AppScreen.BOOKSHELF)
+    private val _currentScreen = MutableStateFlow(AppScreen.HOME)
     val currentScreen: StateFlow<AppScreen> = _currentScreen.asStateFlow()
+
+    private val _isLoadingSplash = MutableStateFlow(true)
+    val isLoadingSplash: StateFlow<Boolean> = _isLoadingSplash.asStateFlow()
+
+    fun dismissSplash() {
+        _isLoadingSplash.value = false
+    }
 
     private val _selectedProphetId = MutableStateFlow<Int?>(null)
     val selectedProphetId: StateFlow<Int?> = _selectedProphetId.asStateFlow()

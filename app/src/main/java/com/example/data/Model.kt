@@ -18,6 +18,7 @@ data class ProphetEntity(
     val motherName: String,
     val siblings: String,
     val children: String = "",
+    val wives: String = "",
     val eraLocation: String = "",
     val photoUrlOrRes: String = "", // Drawable name e.g. "img_app_icon" or custom content URI / URL
     val isBookmarked: Boolean = false,

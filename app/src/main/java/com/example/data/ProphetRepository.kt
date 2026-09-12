@@ -13,7 +13,7 @@ class ProphetRepository(private val dao: ProphetDao) {
     val allDiaryEntries: Flow<List<PersonalDiaryEntryEntity>> = dao.getAllDiaryEntries()
 
     suspend fun checkAndSeedIfEmpty() = withContext(Dispatchers.IO) {
-        if (dao.getProphetsCount() == 0) {
+        if (dao.getProphetsCount() < 42) {
             AppDatabase.populateInitialData(dao)
         }
     }

@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
         ProphetEventEntity::class,
         PersonalDiaryEntryEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
