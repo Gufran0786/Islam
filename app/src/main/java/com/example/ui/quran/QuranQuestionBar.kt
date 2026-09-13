@@ -11,6 +11,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -19,9 +21,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,6 +39,8 @@ fun QuranQuestionBar(
     modifier: Modifier = Modifier
 ) {
     val palette = LocalBookPalette.current
+    val keyboardController = LocalSoftwareKeyboardController.current
+
     var query by remember { mutableStateOf("") }
     var selectedAnswer by remember { mutableStateOf<QuranAnswerItem?>(null) }
     var isExpanded by remember { mutableStateOf(false) }
@@ -42,21 +48,37 @@ fun QuranQuestionBar(
     val sampleQuestions = remember {
         listOf(
             "kya shirk karna haram hai?",
+            "kya roza farz hai?",
             "kya namaz farz hai?",
+            "zakat ka hukm",
             "maa baap ke huqooq",
             "kya sood haram hai?",
-            "kya zina haram hai?",
+            "dil ka sukoon",
+            "hajj kis par farz hai?",
+            "jannat ki neamatein",
+            "dua qubool hona",
             "sabar ka ajar",
             "tauba aur maafi",
             "rizq aur barkat",
-            "kya ghaibat haram hai?",
-            "sharab aur juwa"
+            "gussa maaf karna",
+            "nikah aur shadi",
+            "ilm ki ahmiyat"
         )
     }
 
     val searchResults = remember(query) {
         if (query.isBlank()) emptyList()
         else QuranQuestionAnswerData.searchQuranAnswers(query)
+    }
+
+    // Function to trigger answering
+    val triggerSearch: () -> Unit = {
+        keyboardController?.hide()
+        if (query.isNotBlank()) {
+            val results = QuranQuestionAnswerData.searchQuranAnswers(query)
+            selectedAnswer = results.firstOrNull()
+            isExpanded = true
+        }
     }
 
     Card(
@@ -79,7 +101,7 @@ fun QuranQuestionBar(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Box(
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(34.dp)
                             .clip(CircleShape)
                             .background(palette.accent.copy(alpha = 0.15f)),
                         contentAlignment = Alignment.Center
@@ -88,7 +110,7 @@ fun QuranQuestionBar(
                             imageVector = Icons.Default.QuestionAnswer,
                             contentDescription = null,
                             tint = palette.accent,
-                            modifier = Modifier.size(18.dp)
+                            modifier = Modifier.size(19.dp)
                         )
                     }
                     Spacer(modifier = Modifier.width(10.dp))
@@ -100,7 +122,7 @@ fun QuranQuestionBar(
                             color = palette.textPrimary
                         )
                         Text(
-                            text = "कुरआन से सवाल पूछें • हर सवाल का जवाब आयत के साथ",
+                            text = "अपना सवाल लिखें और Enter दबाएं • हर सवाल का जवाब आयत के साथ",
                             style = MaterialTheme.typography.labelSmall,
                             color = palette.textSecondary
                         )
@@ -126,12 +148,13 @@ fun QuranQuestionBar(
                 value = query,
                 onValueChange = {
                     query = it
+                    // Reset selected answer so user doesn't get locked into old answer
+                    selectedAnswer = null
                     if (it.isNotBlank()) isExpanded = true
-                    if (it.isBlank()) selectedAnswer = null
                 },
                 placeholder = {
                     Text(
-                        text = "e.g. Kya shirk karna haram hai? (سوال لکھیں)...",
+                        text = "e.g. Kya roza farz hai? (سوال درج کریں)...",
                         style = MaterialTheme.typography.bodySmall,
                         color = palette.textSecondary
                     )
@@ -144,15 +167,19 @@ fun QuranQuestionBar(
                     )
                 },
                 trailingIcon = {
-                    if (query.isNotEmpty()) {
-                        IconButton(onClick = {
-                            query = ""
-                            selectedAnswer = null
-                        }) {
-                            Icon(Icons.Default.Clear, contentDescription = "Clear", tint = palette.textSecondary)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        if (query.isNotEmpty()) {
+                            IconButton(onClick = {
+                                query = ""
+                                selectedAnswer = null
+                            }) {
+                                Icon(Icons.Default.Clear, contentDescription = "Clear", tint = palette.textSecondary)
+                            }
                         }
                     }
                 },
+                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                keyboardActions = KeyboardActions(onSearch = { triggerSearch() }),
                 shape = RoundedCornerShape(12.dp),
                 singleLine = true,
                 modifier = Modifier
@@ -160,10 +187,41 @@ fun QuranQuestionBar(
                     .testTag("quran_question_input")
             )
 
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // Dedicated Enter / Ask Button
+            Button(
+                onClick = { triggerSearch() },
+                enabled = query.isNotBlank(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = palette.accent,
+                    contentColor = Color.White,
+                    disabledContainerColor = palette.accent.copy(alpha = 0.35f),
+                    disabledContentColor = Color.White.copy(alpha = 0.6f)
+                ),
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(44.dp)
+                    .testTag("quran_ask_enter_button")
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Search,
+                    contentDescription = "Search",
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "جواب حاصل کریں (Enter / Ask Quran)",
+                    style = MaterialTheme.typography.labelMedium,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
             // Sample Question Chips
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = "عام سوالات (Common Questions):",
+                text = "عام سوالات منتخب کریں (Tap a Question):",
                 style = MaterialTheme.typography.labelSmall,
                 color = palette.accent,
                 fontWeight = FontWeight.SemiBold
@@ -175,21 +233,23 @@ fun QuranQuestionBar(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 items(sampleQuestions) { sample ->
+                    val isSelected = query.equals(sample, ignoreCase = true)
                     Surface(
                         shape = RoundedCornerShape(20.dp),
-                        color = if (query.equals(sample, ignoreCase = true)) palette.accent else palette.surface,
-                        border = androidx.compose.foundation.BorderStroke(1.dp, palette.border),
+                        color = if (isSelected) palette.accent else palette.surface,
+                        border = androidx.compose.foundation.BorderStroke(1.dp, if (isSelected) palette.accent else palette.border),
                         modifier = Modifier.clickable {
                             query = sample
                             isExpanded = true
                             val found = QuranQuestionAnswerData.searchQuranAnswers(sample).firstOrNull()
                             selectedAnswer = found
+                            keyboardController?.hide()
                         }
                     ) {
                         Text(
                             text = sample,
                             style = MaterialTheme.typography.labelSmall,
-                            color = if (query.equals(sample, ignoreCase = true)) Color.White else palette.textPrimary,
+                            color = if (isSelected) Color.White else palette.textPrimary,
                             modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
                         )
                     }
@@ -206,6 +266,46 @@ fun QuranQuestionBar(
                     val activeAnswer = selectedAnswer ?: searchResults.firstOrNull()
 
                     if (activeAnswer != null) {
+                        // If multiple results found, display related tabs
+                        if (searchResults.size > 1) {
+                            Text(
+                                text = "دیگر متعلقہ نتائج (${searchResults.size} نتائج):",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = palette.textSecondary,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            LazyRow(
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(bottom = 8.dp)
+                            ) {
+                                items(searchResults) { resultItem ->
+                                    val isCurrent = resultItem.id == activeAnswer.id
+                                    Surface(
+                                        shape = RoundedCornerShape(12.dp),
+                                        color = if (isCurrent) palette.accent.copy(alpha = 0.2f) else palette.surface,
+                                        border = androidx.compose.foundation.BorderStroke(
+                                            0.5.dp,
+                                            if (isCurrent) palette.accent else palette.border
+                                        ),
+                                        modifier = Modifier.clickable {
+                                            selectedAnswer = resultItem
+                                        }
+                                    ) {
+                                        Text(
+                                            text = resultItem.questionHinglish.take(30) + if (resultItem.questionHinglish.length > 30) "..." else "",
+                                            style = MaterialTheme.typography.labelSmall,
+                                            color = if (isCurrent) palette.accent else palette.textPrimary,
+                                            fontWeight = if (isCurrent) FontWeight.Bold else FontWeight.Normal,
+                                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                                        )
+                                    }
+                                }
+                            }
+                        }
+
                         QuranAnswerDetailCard(
                             answerItem = activeAnswer,
                             onOpenSurah = {

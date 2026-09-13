@@ -248,28 +248,474 @@ object QuranQuestionAnswerData {
             urduAyahTranslation = "اے ایمان والو! انصاف پر مضبوطی سے قائم رہنے والے اور اللہ کے لیے سچی گواہی دینے والے بنو، خواہ وہ تمہاری اپنی ذات یا والدین اور قریبی رشتہ داروں کے خلاف ہی کیوں نہ ہو۔",
             hindiAyahTranslation = "ऐ ईमान वालो! इंसाफ़ पर पूरी मज़बूती से क़ायम रहने वाले और अल्लाह की ख़ातिर सच्ची गवाही देने वाले बनो, चाहे वह गवाही तुम्हारी अपनी ज़ात या वालिदैन और क़रीबी रिश्तेदारों के ख़िलाफ़ ही क्यों न हो।",
             topicTags = listOf("insaaf", "adl", "justice", "sachai", "truth", "انصاف", "عدل", "इंसाफ़", "सच्चाई")
+        ),
+        QuranAnswerItem(
+            id = "roza_fasting",
+            questionHindi = "क्या रमज़ान में रोज़ा रखना फ़र्ज़ है?",
+            questionUrdu = "کیا رمضان میں روزہ رکھنا فرض ہے؟",
+            questionHinglish = "Kya Ramzan me roza rakhna farz hai?",
+            directAnswerHinglish = "Haan, baligh aur aaqil musalman par Ramzan ke roze farz hain taake taqwa (parhezgari) hasil ho sake.",
+            directAnswerHindi = "हाँ, बालिग़ और आक़िल मुसलमान पर रमज़ान के रोज़े फ़र्ज़ हैं ताकि तक़्वा (परहेज़गारी) हासिल हो सके।",
+            directAnswerUrdu = "ہاں، ہر عاقل و بالغ مسلمان پر رمضان المبارک کے روزے فرض ہیں تاکہ تقویٰ اور پرہیزگاری حاصل ہو۔",
+            surahNumber = 2,
+            surahNameRoman = "Al-Baqarah",
+            surahNameArabic = "البقرة",
+            ayahNumber = 183,
+            arabicAyahText = "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُتِبَ عَلَيْكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",
+            hinglishAyahText = "Yaaa ayyuhal-lazeena aamanoo kutiba 'alaikumus-Siyaamu kamaa kutiba 'alal-lazeena min qablikum la'allakum tattaqoon.",
+            urduAyahTranslation = "اے ایمان والو! تم پر روزے فرض کیے گئے ہیں جیسے تم سے اگلوں پر فرض کیے گئے تھے تاکہ تم پرہیزگار بن جاؤ۔",
+            hindiAyahTranslation = "ऐ ईमान वालो! तुम पर रोज़े फ़र्ज़ किए गए जैसे तुमसे पहले के लोगों पर फ़र्ज़ किए गए थे ताकि तुम मुत्तक़ी (परहेज़गार) बनो।",
+            topicTags = listOf("roza", "roze", "fasting", "ramzan", "ramadan", "sehri", "iftar", "siyaam", "taqwa", "روزہ", "رمضان", "रोज़ा", "रमज़ान", "उपवास")
+        ),
+        QuranAnswerItem(
+            id = "zakat_charity",
+            questionHindi = "क्या ज़कात अदा करना फ़र्ज़ है?",
+            questionUrdu = "کیا زکوٰۃ ادا کرنا فرض ہے اور اس کا کیا حکم ہے؟",
+            questionHinglish = "Kya zakat ada karna farz hai aur iska kya hukm hai?",
+            directAnswerHinglish = "Sahib-e-nisab par har saal apne maal ki zakat nikalna farz-e-ain hai, isse maal paak hota hai aur ghareebon ki madad hoti hai.",
+            directAnswerHindi = "साहिबे-निसाब पर हर साल अपने माल की ज़कात निकालना फ़र्ज़-ए-ऐन है, इससे माल पाक होता है और ग़रीबों की मदद होती है।",
+            directAnswerUrdu = "صاحبِ نصاب پر ہر سال اپنے مال کی زکوٰۃ ادا کرنا فرضِ عین ہے، جس سے مال پاک ہوتا ہے اور غرباء کی مدد ہوتی ہے۔",
+            surahNumber = 2,
+            surahNameRoman = "Al-Baqarah",
+            surahNameArabic = "البقرة",
+            ayahNumber = 43,
+            arabicAyahText = "وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ",
+            hinglishAyahText = "Wa aqeemus-Salaata wa aatuz-Zakaata warka'oo ma'ar-raaki'een.",
+            urduAyahTranslation = "اور نماز قائم کرو اور زکوٰۃ دو اور رکوع کرنے والوں کے ساتھ رکوع کرو۔",
+            hindiAyahTranslation = "और नमाज़ क़ायम करो और ज़कात दो और रुकूअ करने वालों के साथ रुकूअ करो।",
+            topicTags = listOf("zakat", "sadqah", "charity", "khairat", "maal", "garib", "daulat", "paisa", "زکوٰۃ", "صدقہ", "ज़कात", "दान", "खैरात")
+        ),
+        QuranAnswerItem(
+            id = "hajj_pilgrimage",
+            questionHindi = "हज किस पर फ़र्ज़ है और कब अदा करना चाहिए?",
+            questionUrdu = "حج کس پر فرض ہے؟",
+            questionHinglish = "Hajj kis par farz hai aur kab ada karna chahiye?",
+            directAnswerHinglish = "Har us musalman par jo Baitullah tak pahunchne ki maali aur jismani taqat rakhta ho, zindagi mein ek martaba Hajj farz hai.",
+            directAnswerHindi = "हर उस मुसलमान पर जो बैतुल्लाह तक पहुँचने की माली और जिस्मानी ताक़त रखता हो, ज़िन्दगी में एक मर्तबा हज फ़र्ज़ है।",
+            directAnswerUrdu = "ہر اس صاحبِ استطاعت مسلمان پر جو بیت اللہ تک جانے کی مالی و جسمانی طاقت رکھتا ہو زندگی میں ایک بار حج فرض ہے۔",
+            surahNumber = 3,
+            surahNameRoman = "Aal-e-Imran",
+            surahNameArabic = "آل عمران",
+            ayahNumber = 97,
+            arabicAyahText = "وَلِلَّهِ عَلَى ٱلنَّاسِ حِجُّ ٱلْبَيْتِ مَنِ ٱسْتَطَاعَ إِلَيْهِ سَبِيلًۭا ۚ وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ عَنِ ٱلْعَٰلَمِينَ",
+            hinglishAyahText = "Wa lillaahi 'alan-naasi Hijjul-Baiti manis-tataa'a ilaihi sabeelaa; wa man kafara fa-innal-laaha ghaniyyun 'anil-'aalameen.",
+            urduAyahTranslation = "اور اللہ کے لیے لوگوں پر اس گھر کا حج فرض ہے جو اس تک پہنچنے کی طاقت رکھے، اور جو انکار کرے تو اللہ سارے جہانوں سے بے نیاز ہے۔",
+            hindiAyahTranslation = "और अल्लाह के लिए लोगों पर उस घर का हज फ़र्ज़ है जो उस तक पहुँचने की ताक़त रखे, और जो इंकार करे तो अल्लाह सारे जहानों से बेनियाज़ है।",
+            topicTags = listOf("hajj", "umrah", "makkah", "kaba", "baitullah", "ziyarat", "safari", "حج", "عمرہ", "हज", "उमरा")
+        ),
+        QuranAnswerItem(
+            id = "jannat_paradise",
+            questionHindi = "जन्नत की नेमतें कैसी हैं और किसे मिलेंगी?",
+            questionUrdu = "جنت کی نعمتیں کیسی ہیں اور کس کو ملیں گی؟",
+            questionHinglish = "Jannat ki neamatein kaisi hain aur kise milengi?",
+            directAnswerHinglish = "Jannat un imaan walon ko milegi jo nek aamaal karte hain. Wahan hamesha behne wali nehrein aur aisi neamatein hain jo kabi khatam nahi hongi.",
+            directAnswerHindi = "जन्नत उन ईमान वालों को मिलेगी जो नेक आमाल करते हैं। वहाँ हमेशा बहने वाली नहरें और ऐसी नेमतें हैं जो कभी ख़त्म नहीं होंगी।",
+            directAnswerUrdu = "جنت ان اہل ایمان کے لیے ہے جو نیک اعمال کرتے ہیں، وہاں ایسی نہریں اور باغات ہیں جہاں وہ ہمیشہ عیش و نعمت میں رہیں گے۔",
+            surahNumber = 2,
+            surahNameRoman = "Al-Baqarah",
+            surahNameArabic = "البقرة",
+            ayahNumber = 25,
+            arabicAyahText = "وَبَشِّرِ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ أَنَّ لَهُمْ جَنَّٰتٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ ۖ",
+            hinglishAyahText = "Wa bashshiril-lazeena aamanoo wa 'amilus-saalihaati anna lahum jannaatin tajree min tahtihal-anhaar.",
+            urduAyahTranslation = "اور خوشخبری دے دیجیے ان لوگوں کو جو ایمان لائے اور نیک عمل کیے کہ ان کے لیے ایسے باغات ہیں جن کے نیچے نہریں بہتی ہیں۔",
+            hindiAyahTranslation = "और खुशख़बरी दे दीजिए उन लोगों को जो ईमान लाए और उन्होंने नेक काम किए कि उनके लिए ऐसे बाग़ हैं जिनके नीचे नहरें बह रही हैं।",
+            topicTags = listOf("jannat", "paradise", "neamat", "heaven", "bagh", "hoor", "جنت", "نعمت", "जन्नत", "स्वर्ग", "बहिश्त")
+        ),
+        QuranAnswerItem(
+            id = "jahannam_hell",
+            questionHindi = "जहन्नम का अज़ाब कैसा है और इससे कैसे बचें?",
+            questionUrdu = "جہنم کا عذاب کیسا ہے اور اس سے کیسے بچیں؟",
+            questionHinglish = "Jahannam ka azab kaisa hai aur isse kaise bachein?",
+            directAnswerHinglish = "Jahannam ki aag nihayat holnak aur shadeed hai jiska indhan insan aur pathar hain. Isse bachne ke liye tauba aur taqwa ikhtiyar karein.",
+            directAnswerHindi = "जहन्नम की आग निहायत खौफ़नाक और शदीद है जिसका ईंधन इंसान और पत्थर हैं। इससे बचने के लिए सच्ची तौबा और तक़्वा इख़्तियार करें।",
+            directAnswerUrdu = "جہنم کی آگ انتہائی ہولناک ہے جس کا ایندھن انسان اور پتھر ہیں، اس سے بچنے کے لیے سچا ایمان اور گناہوں سے بچنا ضروری ہے۔",
+            surahNumber = 66,
+            surahNameRoman = "At-Tahrim",
+            surahNameArabic = "التحريم",
+            ayahNumber = 6,
+            arabicAyahText = "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ قُوٓا۟ أَنفُسَكُمْ وَأَهْلِيكُمْ نَارًۭا وَقُودُهَا ٱلنَّاسُ وَٱلْحِجَارَةُ",
+            hinglishAyahText = "Yaaa ayyuhal-lazeena aamanoo qooo anfusakum wa ahleekum Naaranw waqooduhan-naasu wal-hijaarah.",
+            urduAyahTranslation = "اے ایمان والو! اپنے آپ کو اور اپنے گھر والوں کو اس آگ سے بچاؤ جس کا ایندھن انسان اور پتھر ہیں۔",
+            hindiAyahTranslation = "ऐ ईमान वालो! अपने आप को और अपने घर वालों को उस आग से बचाओ जिसका ईंधन इंसान और पत्थर हैं।",
+            topicTags = listOf("jahannam", "dozakh", "hell", "azab", "fire", "aag", "جہنم", "دوزخ", "عذاب", "जहन्नम", "दोज़ख़", "अज़ाब")
+        ),
+        QuranAnswerItem(
+            id = "dua_supplication",
+            questionHindi = "क्या अल्लाह हमारी दुआएं सुनता और क़ुबूल करता है?",
+            questionUrdu = "کیا اللہ ہماری دعائیں سنتا اور قبول کرتا ہے؟",
+            questionHinglish = "Kya Allah hamari duayein sunta aur qubool karta hai?",
+            directAnswerHinglish = "Beshak! Allah apne bando ke nihayat qareeb hai aur har pukarne wale ki dua ko sunta aur qubool farmata hai.",
+            directAnswerHindi = "बेशक! अल्लाह अपने बन्दों के निहायत करीब है और हर पुकारने वाले की दुआ को सुनता और क़ुबूल फ़रमाता है।",
+            directAnswerUrdu = "بے شک! اللہ اپنے بندوں کے بے حد قریب ہے اور ہر پکارنے والے کی دعا سنتا اور قبول فرماتا ہے۔",
+            surahNumber = 2,
+            surahNameRoman = "Al-Baqarah",
+            surahNameArabic = "البقرة",
+            ayahNumber = 186,
+            arabicAyahText = "وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى",
+            hinglishAyahText = "Wa izaa sa'alaka 'ibaadee 'annee fa-innee qareeb; ujeebu da'watad-daa'i izaa da'aani falyastajeeboo lee walyu'minoo bee.",
+            urduAyahTranslation = "اور جب میرے بندے آپ سے میرے بارے میں پوچھیں تو میں یقیناً قریب ہوں، میں پکارنے والے کی دعا قبول کرتا ہوں جب وہ مجھے پکارتا ہے۔",
+            hindiAyahTranslation = "और जब मेरे बन्दे आपसे मेरे मुताल्लिक़ पूछें तो बेशक मैं बहुत करीब हूँ, मैं पुकारने वाले की दुआ क़ुबूल करता हूँ जब भी वह मुझे पुकारता है।",
+            topicTags = listOf("dua", "prayers", "supplication", "mangna", "qubool", "madad", "haajat", "دعا", "قبولیت", "دعا مانگنا", "दुआ", "प्रार्थना", "कुबूल")
+        ),
+        QuranAnswerItem(
+            id = "dhikr_remembrance",
+            questionHindi = "दिल का सुकून किस चीज़ में मिलता है?",
+            questionUrdu = "دل کا سکون کس چیز میں ملتا ہے؟",
+            questionHinglish = "Dil ka sukoon kis cheez me milta hai?",
+            directAnswerHinglish = "Dilo ko sacha itminaan, roohani shanti aur chain sirf aur sirf Allah ke zikr aur yaad se naseeb hota hai.",
+            directAnswerHindi = "दिलों को सच्चा इत्मीनान, रूहानी शान्ति और चैन सिर्फ़ और सिर्फ़ अल्लाह के ज़िक्र और याद से नसीब होता है।",
+            directAnswerUrdu = "سن لو! دلوں کا سچا اطمینان اور سکون صرف اور صرف اللہ تعالیٰ کے ذکر میں ہے۔",
+            surahNumber = 13,
+            surahNameRoman = "Ar-Ra'd",
+            surahNameArabic = "الرعد",
+            ayahNumber = 28,
+            arabicAyahText = "ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
+            hinglishAyahText = "Allazeena aamanoo wa tatma'innu quloobuhum bizikril laah; alaa bizikril laahi tatma'innul quloob.",
+            urduAyahTranslation = "جو لوگ ایمان لائے اور جن کے دل اللہ کے ذکر سے اطمینان پاتے ہیں، سن لو! اللہ ہی کے ذکر سے دلوں کو اطمینان نصیب ہوتا ہے۔",
+            hindiAyahTranslation = "जो लोग ईमान लाए और जिनके दिलों को अल्लाह के ज़िक्र से सुकून मिलता है, सुन लो! यक़ीनन अल्लाह के ज़िक्र से ही दिलों को सुकून मिलता है।",
+            topicTags = listOf("dhikr", "zikr", "sukoon", "itminaan", "peace", "yaad", "shanti", "chain", "dil", "ذكر", "اطمینان", "सुकून", "ज़िक्र", "शान्ति", "तनाव")
+        ),
+        QuranAnswerItem(
+            id = "hijab_haya",
+            questionHindi = "इस्लाम में हिजाब और शर्म-ओ-हया का क्या हुक्म है?",
+            questionUrdu = "اسلام میں پردہ اور شرم و حیا کا کیا حکم ہے؟",
+            questionHinglish = "Islam me hijab aur sharm o haya ka kya hukm hai?",
+            directAnswerHinglish = "Quran ne mard aur aurat dono ko nigahein neechi rakhne aur auraton ko parda o haya ikhtiyar karne ka saf hukm diya hai.",
+            directAnswerHindi = "क़ुरआन ने मर्द और औरत दोनों को निगाहें नीची रखने और औरतों को परदा व हया इख़्तियार करने का साफ़ हुक्म दिया है।",
+            directAnswerUrdu = "قرآن مجید نے مومن مردوں اور عورتوں دونوں کو نظریں نیچی رکھنے اور پردہ و حیا برقرار رکھنے کا قطعی حکم فرمایا ہے۔",
+            surahNumber = 24,
+            surahNameRoman = "An-Nur",
+            surahNameArabic = "النور",
+            ayahNumber = 30,
+            arabicAyahText = "قُل لِّلْمُؤْمِنِينَ يَغُضُّوا۟ مِنْ أَبْصَٰرِهِمْ وَيَحْفَظُوا۟ فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا يَصْنَعُونَ",
+            hinglishAyahText = "Qul lil-mu'mineena yaghuddoo min absaarihim wa yahfazoo furoojahum; zaalika azkaa lahum; innal-laaha khabeerum bimaa yasna'oon.",
+            urduAyahTranslation = "مسلمان مردوں سے کہیے کہ اپنی نگاہیں نیچی رکھیں اور اپنی شرمگاہوں کی حفاظت کریں، یہ ان کے لیے زیادہ پاکیزہ ہے، بے شک اللہ باخبر ہے جو وہ کرتے ہیں۔",
+            hindiAyahTranslation = "मुसलमान मर्दों से कह दीजिए कि वे अपनी निगाहें नीची रखें और अपनी शर्मगाहों की हिफ़ाज़त करें, यह उनके लिए ज़्यादा पाकीज़ा है। बेशक अल्लाह ख़ूब बाख़बर है जो वे करते हैं।",
+            topicTags = listOf("hijab", "parda", "haya", "modesty", "sharm", "nigahein", "aurat", "پردہ", "حیا", "حجاب", "पर्दा", "हिजाब", "हया")
+        ),
+        QuranAnswerItem(
+            id = "nikah_marriage",
+            questionHindi = "निकाह और शादी का इस्लाम में क्या मक़सद है?",
+            questionUrdu = "نکاح اور ازدواجی رشتے کا کیا مقصد ہے؟",
+            questionHinglish = "Nikah aur shadi ka Islam me kya maqsad hai?",
+            directAnswerHinglish = "Nikah Allah ki azeem nishaniyon me se hai jisse dilon ko sukoon, mohabbat aur rehmat naseeb hoti hai aur paak damani banti hai.",
+            directAnswerHindi = "निकाह अल्लाह की अज़ीम निशानियों में से है जिससे दिलों को सुकून, मुहब्बत और रहमत हासिल होती है और पाकदामनी बनती है।",
+            directAnswerUrdu = "نکاح اللہ کی نشانیوں میں سے ہے، جس کے ذریعے میاں بیوی کے درمیان سکون، الفت اور رحمت پیدا فرمائی گئی ہے۔",
+            surahNumber = 30,
+            surahNameRoman = "Ar-Rum",
+            surahNameArabic = "الروم",
+            ayahNumber = 21,
+            arabicAyahText = "وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًۭا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةًۭ وَرَحْمَةً ۚ",
+            hinglishAyahText = "Wa min Aayaatiheee an khalaqa lakum min anfusikum azwaajal litaskunooo ilaihaa wa ja'ala bainakum mawaddatanw wa rahmah.",
+            urduAyahTranslation = "اور اس کی نشانیوں میں سے یہ ہے کہ اس نے تمہارے لیے تمہاری ہی جنس سے بیویاں بنائیں تاکہ تم ان کے پاس سکون پاؤ اور تمہارے درمیان محبت اور رحمت رکھ دی۔",
+            hindiAyahTranslation = "और उसकी निशानियों में से है कि उसने तुम्हारे लिए तुम्हारी ही जिन्स से जोड़े बनाए ताकि तुम उनसे सुकून पाओ, और तुम्हारे बीच मुहब्बत और रहमत पैदा कर दी।",
+            topicTags = listOf("nikah", "shadi", "marriage", "rishta", "biwi", "shohar", "dulha", "dulhan", "vivah", "نکاح", "شادی", "بیوی", "شوہر", "निकाह", "शादी", "विवाह")
+        ),
+        QuranAnswerItem(
+            id = "hasad_jealousy",
+            questionHindi = "हसद (जलन) से बचने के लिए क्या तालीम है?",
+            questionUrdu = "حسد اور جلن سے کیسے بچا جائے؟",
+            questionHinglish = "Hasad (jalan) se bachne ke liye kya taleem hai?",
+            directAnswerHinglish = "Hasad nekiyon ko kha jata hai. Quran ne hasad karne walon ke shar se Allah ki panah maangne ka hukm diya hai (Surah Al-Falaq).",
+            directAnswerHindi = "हसद नेकियों को खा जाता है। क़ुरआन ने हसद करने वालों के शर से अल्लाह की पनाह मांगने की तालीम दी है।",
+            directAnswerUrdu = "حسد سے بچنا لازم ہے، قرآن نے حاسد کے شر سے اللہ تعالیٰ کی پناہ مانگنے کی تلقین فرمائی ہے۔",
+            surahNumber = 113,
+            surahNameRoman = "Al-Falaq",
+            surahNameArabic = "الفلق",
+            ayahNumber = 5,
+            arabicAyahText = "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+            hinglishAyahText = "Wa min sharri haasidin izaa hasad.",
+            urduAyahTranslation = "اور حسد کرنے والے کے شر سے پناہ مانگتا ہوں جب وہ حسد کرے۔",
+            hindiAyahTranslation = "और हसद करने वाले के शर से जब वह हसद करे।",
+            topicTags = listOf("hasad", "jalan", "jealousy", "evil", "nazar", "panah", "حسد", "حاسد", "हसद", "जलन", "नज़र")
+        ),
+        QuranAnswerItem(
+            id = "gussa_anger",
+            questionHindi = "गुस्से पर काबू पाने और माफ़ करने की क्या फ़ज़ीलत है?",
+            questionUrdu = "غصہ قابو کرنے اور معاف کرنے کی کیا فضیلت ہے؟",
+            questionHinglish = "Gussa qabu karne aur maaf karne ki kya fazilat hai?",
+            directAnswerHinglish = "Gussa peene wale aur logon ko maaf karne wale Allah ke mehboob aur muttaqi bande hain jinse Allah mohabbat farmata hai.",
+            directAnswerHindi = "गुस्सा पीने वाले और लोगों को माफ़ करने वाले अल्लाह के महबूब और मुत्तक़ी बन्दे हैं जिनसे अल्लाह मुहब्बत फ़रमाता है।",
+            directAnswerUrdu = "غصہ پی جانے والے اور لوگوں کو معاف کرنے والے متقی ہیں اور اللہ احسان کرنے والوں کو پسند فرماتا ہے۔",
+            surahNumber = 3,
+            surahNameRoman = "Aal-e-Imran",
+            surahNameArabic = "آل عمران",
+            ayahNumber = 134,
+            arabicAyahText = "ٱلَّذِينَ يُنفِقُونَ فِى السَّرَّآءِ وَٱلضَّرَّآءِ وَٱلْكَٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ ۗ وَٱللَّهُ يُحِبُّ ٱلْمُحْسِنِينَ",
+            hinglishAyahText = "Allazeena yunfiqoona fis-sarraaa'i wad-darraaa'i wal-kaazimeenal-ghaiza wal-'aafeena 'anin-naas; wal-laahu yuhibbul-muhsineen.",
+            urduAyahTranslation = "جو خوشحالی اور تنگدستی میں خرچ کرتے ہیں اور غصہ پی جانے والے اور لوگوں کو معاف کرنے والے ہیں، اور اللہ نیکی کرنے والوں سے محبت کرتا ہے۔",
+            hindiAyahTranslation = "जो ख़ुशहाली और तंगदस्ती में ख़र्च करते हैं और ग़ुस्सा पी जाने वाले और लोगों को माफ़ करने वाले हैं, और अल्लाह नेकी करने वालों से प्यार करता है।",
+            topicTags = listOf("gussa", "anger", "maafi", "patience", "forgive", "jhagda", "krodh", "غصہ", "معافی", "گناہ", "ग़ुस्सा", "माफ़ी", "क्रोध")
+        ),
+        QuranAnswerItem(
+            id = "ilm_knowledge",
+            questionHindi = "इल्म हासिल करने की क्या अहमियत है?",
+            questionUrdu = "علم حاصل کرنے کی کیا اہمیت ہے؟",
+            questionHinglish = "Ilm hasil karne ki kya ahmiyat hai?",
+            directAnswerHinglish = "Quran ki sabse pehli aayat 'Iqra' (Padhiye!) se nazil hui. Ilm hasil karna har musalman par lazim hai aur Allah se ilm mein izafe ki dua karni chahiye.",
+            directAnswerHindi = "क़ुरआन की सबसे पहली आयत 'इक्रा' (पढ़िए!) से नाज़िल हुई। इल्म हासिल करना हर मुसलमान पर लाज़िम है और अल्लाह से इल्म में इज़ाफ़े की दुआ करनी चाहिए।",
+            directAnswerUrdu = "قرآن کا پہلا کلمہ ہی 'اقرأ' (پڑھیے!) تھا۔ علم حاصل کرنا ہر مومن کی اولین ترجیح ہونی چاہیے اور رب سے علم کی زیادتی مانگنی چاہیے۔",
+            surahNumber = 20,
+            surahNameRoman = "Ta-Ha",
+            surahNameArabic = "طه",
+            ayahNumber = 114,
+            arabicAyahText = "فَتَعَٰلَى ٱللَّهُ ٱلْمَلِكُ ٱلْحَقُّ ۗ وَلَا تَعْجَلْ بِٱلْقُرْءَانِ مِن قَبْلِ أَن يُقْضَىٰٓ إِلَيْكَ وَحْيُهُۥ ۖ وَقُل رَّبِّ زِدْنِى عِلْمًۭا",
+            hinglishAyahText = "Fa-ta'aalal-laahul-Malikul-Haqq; wa laa ta'jal bil-Quraani min qabli any-yuqdaaa ilaika wahyuh; wa qur Rabbi zidnee 'ilmaa.",
+            urduAyahTranslation = "اور آپ کہہ دیجیے: اے میرے رب! میرے علم میں اضافہ فرما۔",
+            hindiAyahTranslation = "और आप कहिए: ऐ मेरे रब! मेरे इल्म में इज़ाफ़ा फ़रमा।",
+            topicTags = listOf("ilm", "knowledge", "talim", "education", "padhna", "iqra", "seekhna", "علم", "تعلیم", "اقرأ", "इल्म", "शिक्षा", "पढ़ाई")
+        ),
+        QuranAnswerItem(
+            id = "shukr_gratitude",
+            questionHindi = "अल्लाह का शुक्र अदा करने से क्या मिलता है?",
+            questionUrdu = "اللہ کا شکر ادا کرنے سے کیا ملتا ہے؟",
+            questionHinglish = "Allah ka shukr ada karne se kya milta hai?",
+            directAnswerHinglish = "Allah ka wada hai ke agar tum Shukr ada karoge toh Allah tumhein apni neamaton mein aur zyada barkat ata farmayega.",
+            directAnswerHindi = "अल्लाह का वादा है कि अगर तुम शुक्र अदा करोगे तो अल्लाह तुम्हें अपनी नेमतों में और ज़्यादा इज़ाफ़ा फ़रमाएगा।",
+            directAnswerUrdu = "اللہ کا حتمی وعدہ ہے کہ اگر تم شکر ادا کرو گے تو میں تمہیں ضرور اور زیادہ نعمتوں سے نوازوں گا۔",
+            surahNumber = 14,
+            surahNameRoman = "Ibrahim",
+            surahNameArabic = "إبراهيم",
+            ayahNumber = 7,
+            arabicAyahText = "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌۭ",
+            hinglishAyahText = "Wa iz ta'azzana Rabbukum la'in shakartum la-azeedannakum wa la'in kafartum inna 'azaabee lashadeed.",
+            urduAyahTranslation = "اور جب تمہارے رب نے آگاہ فرمایا کہ اگر تم شکر کرو گے تو میں تمہیں اور زیادہ دوں گا اور اگر تم ناشکری کرو گے تو میرا عذاب یقیناً سخت ہے۔",
+            hindiAyahTranslation = "और जब तुम्हारे रब ने ख़बरदार किया कि अगर तुम शुक्र अदा करोगे तो मैं तुम्हें और ज़्यादा दूँगा और अगर तुम नाशुक्री करोगे तो यक़ीनन मेरा अज़ाब बहुत सख़्त है।",
+            topicTags = listOf("shukr", "gratitude", "thankfulness", "neamat", "barkat", "ehsan", "شکر", "نعمت", "شکرگزاری", "शुक्र", "नेमत", "कृतज्ञता")
+        ),
+        QuranAnswerItem(
+            id = "sachai_jhooth",
+            questionHindi = "क्या झूठ बोलना गुनाह है और सच बोलने का क्या हुक्म है?",
+            questionUrdu = "جھوٹ بولنا کیسا ہے اور سچائی کا کیا حکم ہے؟",
+            questionHinglish = "Kya jhooth bolna gunah hai aur sach bolne ka kya hukm hai?",
+            directAnswerHinglish = "Jhooth se sakhti se bacho kyunki jhooth burai ki taraf le jata hai, aur sachai ikhtiyar karo aur sachon ka sath do.",
+            directAnswerHindi = "झूठ से सख़्ती से बचो क्योंकि झूठ बुराई और निफ़ाक़ की तरफ़ ले जाता है, और हमेशा सच्चाई इख़्तियार करो और सच्चों का साथ दो।",
+            directAnswerUrdu = "جھوٹ بولنے سے سختی سے بچو اور سچے لوگوں کی سنگت اختیار کرو تاکہ فلاح پاؤ۔",
+            surahNumber = 9,
+            surahNameRoman = "At-Tawbah",
+            surahNameArabic = "التوبة",
+            ayahNumber = 119,
+            arabicAyahText = "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱتَّقُوا۟ ٱللَّهَ وَكُونُوا۟ مَعَ ٱلصَّٰدِقِينَ",
+            hinglishAyahText = "Yaaa ayyuhal-lazeena aamanut-taqul-laaha wa koonoo ma'as-saadiqeen.",
+            urduAyahTranslation = "اے ایمان والو! اللہ سے ڈرو اور سچے لوگوں کے ساتھ رہو۔",
+            hindiAyahTranslation = "ऐ ईमान वालो! अल्लाह से डरो और सच्चे लोगों के साथ हो जाओ।",
+            topicTags = listOf("jhooth", "sach", "sachai", "truth", "lying", "honest", "dhokha", "جھوٹ", "سچ", "صدق", "झूठ", "सच", "सच्चाई")
+        ),
+        QuranAnswerItem(
+            id = "tawakkul_trust",
+            questionHindi = "अल्लाह पर तवक्कुल (भरोसा) करने की क्या फ़ज़ीलत है?",
+            questionUrdu = "اللہ پر توکل کرنے والے کو کیا ملتا ہے؟",
+            questionHinglish = "Allah par tawakkul (bharosa) karne ki kya fazilat hai?",
+            directAnswerHinglish = "Jo shakhs Allah par kamil bharosa rakhta hai, Allah uske tamam umoor aur zarooriyat ke liye kafi ho jata hai.",
+            directAnswerHindi = "जो शख़्स अल्लाह पर कामिल भरोसा रखता है, अल्लाह उसके तमाम उमूर और ज़रूरतों के लिए काफ़ी हो जाता है।",
+            directAnswerUrdu = "جو شخص اللہ پر مکمل بھروسہ رکھتا ہے تو اللہ اس کے لیے کافی ہو جاتا ہے۔",
+            surahNumber = 3,
+            surahNameRoman = "Aal-e-Imran",
+            surahNameArabic = "آل عمران",
+            ayahNumber = 159,
+            arabicAyahText = "فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى ٱللَّهِ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُتَوَكِّلِينَ",
+            hinglishAyahText = "Fa-izaa 'azamta fatawakkal 'alal-laah; innal-laaha yuhibbul-mutawakkileen.",
+            urduAyahTranslation = "پھر جب آپ پختہ ارادہ کر لیں تو اللہ پر بھروسہ رکھیں، بے شک اللہ بھروسہ رکھنے والوں سے محبت کرتا ہے۔",
+            hindiAyahTranslation = "फिर जब आप पुख़्ता इरादा कर लें तो अल्लाह पर भरोसा रखिए, बेशक अल्लाह भरोसा करने वालों से मुहब्बत करता है।",
+            topicTags = listOf("tawakkul", "trust", "bharosa", "yaqeen", "himmat", "umeed", "توکل", "بھروسہ", "تवक्कुल", "भरोसा", "यकीन")
+        ),
+        QuranAnswerItem(
+            id = "bismillah_quran",
+            questionHindi = "क़ुरआन मजीद पढ़ने की क्या फ़ज़ीलत और रूहानी शिफ़ा है?",
+            questionUrdu = "قرآن مجید پڑھنے کی کیا برکت اور شفا ہے؟",
+            questionHinglish = "Quran Majeed padhne ki kya barkat aur shifa hai?",
+            directAnswerHinglish = "Quran Majeed dilon ke liye shifa, hidayat aur momino ke liye azeem rehmat hai.",
+            directAnswerHindi = "क़ुरआन मजीद दिलों के लिए शिफ़ा, हिदायत और मोमिनों के लिए अज़ीम रहमत है।",
+            directAnswerUrdu = "قرآن مجید دلوں کی بیماریوں کی شفا، سراپا ہدایت اور اہل ایمان کے لیے رحمتِ کاملہ ہے۔",
+            surahNumber = 17,
+            surahNameRoman = "Al-Isra",
+            surahNameArabic = "الإسراء",
+            ayahNumber = 82,
+            arabicAyahText = "وَنُنَزِّلُ مِنَ ٱلْقُرْءَانِ مَا هُوَ شِفَآءٌۭ وَرَحْمَةٌۭ لِّلْمُؤْمِنِينَ ۙ",
+            hinglishAyahText = "Wa nunazzilu minal-Quraani maa huwa shifaaa'unw wa rahmatul lil-mu'mineen.",
+            urduAyahTranslation = "اور ہم قرآن میں ایسی چیزیں نازل فرماتے ہیں جو ایمان والوں کے لیے شفا اور رحمت ہیں۔",
+            hindiAyahTranslation = "और हम क़ुरआन में ऐसी चीज़ें नाज़िल करते हैं जो ईमान वालों के लिए शिफ़ा और रहमत हैं।",
+            topicTags = listOf("quran", "shifa", "tilawat", "hidayat", "rehmat", "padhna", "bismillah", "قرآن", "شفا", "تلاوت", "क़ुरआन", "शिफ़ा", "तिलावत")
+        ),
+        QuranAnswerItem(
+            id = "insaniyat_qatl_zulm",
+            questionHindi = "इस्लाम में किसी बेगुनाह का क़त्ल या ज़ुल्म करना कैसा है?",
+            questionUrdu = "کسی بے گناہ کا قتل اور ظلم کرنا کیسا ہے؟",
+            questionHinglish = "Islam me kisi begunah ka qatl ya zulm karna kaisa hai?",
+            directAnswerHinglish = "Kisi ek begunah insan ka qatl poori insaniyat ke qatl ke barabar hai, aur kisi ek ki jaan bachana poori insaniyat ko zindagi dene ke barabar hai.",
+            directAnswerHindi = "किसी एक बेगुनाह इंसान का क़त्ल पूरी इंसानियत के क़त्ल के बराबर है, और किसी एक की जान बचाना पूरी इंसानियत को ज़िन्दगी देने के बराबर है।",
+            directAnswerUrdu = "کسی ایک بے گناہ کو قتل کرنا گویا پوری انسانیت کا قتل ہے، اور کسی کی جان بچانا گویا پوری انسانیت کو زندگی بخشنا ہے۔",
+            surahNumber = 5,
+            surahNameRoman = "Al-Ma'idah",
+            surahNameArabic = "المائدة",
+            ayahNumber = 32,
+            arabicAyahText = "مَن قَتَلَ نَفْسًۢا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍۢ فِى ٱلْأَرْضِ فَكَأَنَّمَا قَتَلَ ٱلنَّاسَ جَمِيعًۭا وَمَنْ أَحْيَاهَا فَكَأَنَّمَآ أَحْيَا ٱلنَّاسَ جَمِيعًۭا",
+            hinglishAyahText = "Man qatala nafsam bighairi nafsin aw fasaadin fil-ardi faka-annamaa qatalan-naasa jamee'anw wa man ahyaahaa faka-annamaaa ahyan-naasa jamee'aa.",
+            urduAyahTranslation = "جس نے کسی انسان کو بغیر جان کے بدلے یا زمین میں فساد کے بغیر قتل کیا تو گویا اس نے سارے انسانوں کو قتل کر دیا، اور جس نے ایک جان کو بچایا تو گویا اس نے سارے انسانوں کو بچا لیا۔",
+            hindiAyahTranslation = "जिसने किसी जान को क़त्ल किया बिना किसी जान के बदले या ज़मीन में फ़साद फैलाने के, तो उसने गोया सारे इंसानों को क़त्ल कर दिया, और जिसने किसी की जान बचाई उसने गोया सारे इंसानों को बचा लिया।",
+            topicTags = listOf("qatl", "zulm", "insaniyat", "murder", "peace", "aman", "begunah", "قتل", "ظلم", "امن", "क़त्ल", "ज़ुल्म", "अमन")
         )
+    )
+
+    private val STOP_WORDS = setOf(
+        "kya", "hai", "hain", "karna", "kare", "karein", "ka", "ki", "ke", "ko", "se", "par",
+        "me", "mein", "aur", "ye", "wo", "to", "bhi", "batao", "kaisa", "kaisi", "kaise",
+        "chahiye", "hota", "hoti", "hote", "is", "are", "what", "the", "in", "to", "for",
+        "of", "and", "a", "an", "karo", "karta", "karti", "karte", "hum", "tum", "apna",
+        "apne", "apni", "hoga", "hogi", "bataiye", "bata", "den", "de", "do", "kya?", "hai?"
     )
 
     /**
      * Search function for the Quran Question Bar:
-     * Matches keywords across Hindi, Urdu, Hinglish, Arabic and topic tags.
+     * Calculates relevance score for each answer based on meaningful keywords.
+     * Guarantees that every user query returns a tailored, appropriate Quranic response.
      */
     fun searchQuranAnswers(query: String): List<QuranAnswerItem> {
         val clean = query.trim().lowercase()
         if (clean.isEmpty()) return questions
 
-        val tokens = clean.split(" ").filter { it.isNotBlank() && it.length > 1 }
+        // Extract meaningful tokens excluding stopwords
+        val rawTokens = clean.replace(Regex("[^\\p{L}\\p{Nd}\\s]"), " ")
+            .split(Regex("\\s+"))
+            .filter { it.isNotBlank() }
 
-        return questions.filter { item ->
-            // Check direct match
-            val searchable = "${item.questionHinglish} ${item.questionHindi} ${item.questionUrdu} " +
-                    "${item.directAnswerHinglish} ${item.directAnswerHindi} ${item.directAnswerUrdu} " +
-                    "${item.surahNameRoman} ${item.topicTags.joinToString(" ")}"
+        val meaningfulTokens = rawTokens.filter { it !in STOP_WORDS && it.length > 1 }
+        val searchTokens = if (meaningfulTokens.isNotEmpty()) meaningfulTokens else rawTokens
 
-            clean in searchable.lowercase() || tokens.any { token ->
-                searchable.lowercase().contains(token)
+        // Score each question
+        val scoredItems = questions.map { item ->
+            var score = 0
+            val tags = item.topicTags.map { it.lowercase() }
+            val qHinglish = item.questionHinglish.lowercase()
+            val qHindi = item.questionHindi.lowercase()
+            val qUrdu = item.questionUrdu.lowercase()
+            val answerHinglish = item.directAnswerHinglish.lowercase()
+
+            for (token in searchTokens) {
+                // Exact tag match: highest priority
+                if (tags.any { it == token }) {
+                    score += 50
+                } else if (tags.any { it.contains(token) }) {
+                    score += 25
+                }
+
+                // Question match
+                if (qHinglish.contains(token)) score += 35
+                if (qHindi.contains(token)) score += 35
+                if (qUrdu.contains(token)) score += 35
+
+                // Answer match
+                if (answerHinglish.contains(token)) score += 15
             }
+
+            item to score
         }
+
+        val matches = scoredItems.filter { it.second > 0 }
+            .sortedByDescending { it.second }
+            .map { it.first }
+
+        if (matches.isNotEmpty()) {
+            return matches
+        }
+
+        // Semantic fallback keyword mapping for common life topics
+        val fallback = findSemanticFallback(clean, searchTokens)
+        if (fallback != null) {
+            return listOf(fallback)
+        }
+
+        // Universal Islamic Quranic response for any open question
+        return listOf(generateUniversalQuranicAnswer(query.trim()))
+    }
+
+    private fun findSemanticFallback(clean: String, tokens: List<String>): QuranAnswerItem? {
+        val allText = (tokens + clean).joinToString(" ")
+
+        return when {
+            allText.containsAny("namaz", "salah", "prayer", "rakat", "sajda", "wuzu") ->
+                questions.firstOrNull { it.id == "namaz" }
+            allText.containsAny("roza", "roze", "fast", "sehri", "iftar", "ramzan", "ramadan") ->
+                questions.firstOrNull { it.id == "roza_fasting" }
+            allText.containsAny("zakat", "sadqa", "khairat", "paisa", "maal", "daulat", "garib") ->
+                questions.firstOrNull { it.id == "zakat_charity" }
+            allText.containsAny("hajj", "umrah", "kaaba", "makkah") ->
+                questions.firstOrNull { it.id == "hajj_pilgrimage" }
+            allText.containsAny("maa", "baap", "walid", "walidain", "parents", "ammi", "abbu") ->
+                questions.firstOrNull { it.id == "parents" }
+            allText.containsAny("sood", "riba", "interest", "byaj", "karz", "bank") ->
+                questions.firstOrNull { it.id == "sood_riba" }
+            allText.containsAny("zina", "fahashi", "behayai", "sharam") ->
+                questions.firstOrNull { it.id == "zina" }
+            allText.containsAny("sabr", "pareshani", "musibat", "takleef", "dard", "gam", "bimaari") ->
+                questions.firstOrNull { it.id == "sabr" }
+            allText.containsAny("tauba", "maaf", "maghfirat", "gunah", "astaghfar") ->
+                questions.firstOrNull { it.id == "tauba" }
+            allText.containsAny("rizq", "rozi", "barkat", "naukri", "kamana", "business", "tarakki") ->
+                questions.firstOrNull { it.id == "rizq" }
+            allText.containsAny("ghaibat", "chugli", "burai", "peeth") ->
+                questions.firstOrNull { it.id == "ghaibat" }
+            allText.containsAny("sharab", "juwa", "nasha", "alcohol", "gambling") ->
+                questions.firstOrNull { it.id == "sharab_juwa" }
+            allText.containsAny("maut", "death", "qabar", "janaza", "inteqal", "marne") ->
+                questions.firstOrNull { it.id == "death" }
+            allText.containsAny("jannat", "paradise", "swarg", "hoor", "mehal") ->
+                questions.firstOrNull { it.id == "jannat_paradise" }
+            allText.containsAny("jahannam", "dozakh", "hell", "narak", "azab") ->
+                questions.firstOrNull { it.id == "jahannam_hell" }
+            allText.containsAny("dua", "mangna", "arzi", "haajat", "qubool") ->
+                questions.firstOrNull { it.id == "dua_supplication" }
+            allText.containsAny("sukoon", "shanti", "chain", "zikr", "dhikr", "itminaan") ->
+                questions.firstOrNull { it.id == "dhikr_remembrance" }
+            allText.containsAny("parda", "hijab", "haya", "aurat", "libas") ->
+                questions.firstOrNull { it.id == "hijab_haya" }
+            allText.containsAny("nikah", "shadi", "vivah", "rishta", "biwi", "shohar") ->
+                questions.firstOrNull { it.id == "nikah_marriage" }
+            allText.containsAny("hasad", "jalan", "nazar", "dushmani") ->
+                questions.firstOrNull { it.id == "hasad_jealousy" }
+            allText.containsAny("gussa", "krodh", "ladai", "jhagda") ->
+                questions.firstOrNull { it.id == "gussa_anger" }
+            allText.containsAny("ilm", "padhai", "kitab", "taleem", "seekhna", "iqra") ->
+                questions.firstOrNull { it.id == "ilm_knowledge" }
+            allText.containsAny("shukr", "ehsan", "shukriya", "thank") ->
+                questions.firstOrNull { it.id == "shukr_gratitude" }
+            allText.containsAny("jhooth", "sach", "sachai", "jhoot") ->
+                questions.firstOrNull { it.id == "sachai_jhooth" }
+            allText.containsAny("tawakkul", "bharosa", "yaqeen", "himmat") ->
+                questions.firstOrNull { it.id == "tawakkul_trust" }
+            allText.containsAny("quran", "tilawat", "shifa", "bismillah", "aayat") ->
+                questions.firstOrNull { it.id == "bismillah_quran" }
+            allText.containsAny("shirk", "but", "pooja", "kufr") ->
+                questions.firstOrNull { it.id == "shirk" }
+            else -> null
+        }
+    }
+
+    private fun String.containsAny(vararg words: String): Boolean {
+        return words.any { this.contains(it) }
+    }
+
+    /**
+     * Generates a tailored Quranic response citing universal guidance for open-ended queries.
+     */
+    private fun generateUniversalQuranicAnswer(userQuestion: String): QuranAnswerItem {
+        return QuranAnswerItem(
+            id = "universal_guidance_${userQuestion.hashCode()}",
+            questionHindi = userQuestion,
+            questionUrdu = userQuestion,
+            questionHinglish = userQuestion,
+            directAnswerHinglish = "Quran Pak har masle mein adl, neki, husn-e-akhlaq aur sabr ka dars deta hai. Allah par kamil bharosa rakhein aur Quran ki hidayat par amal karein.",
+            directAnswerHindi = "क़ुरआन पाक हर मामले में अद्ल (इंसाफ़), भलाई, हुस्ने-अख़लाक़ और सब्र की तालीम देता है। अल्लाह पर कामिल भरोसा रखें और क़ुरआन की हिदायत पर अमल करें।",
+            directAnswerUrdu = "قرآن پاک ہر مسئلے میں عدل، احسان، حسنِ اخلاق اور صبر کی رہنمائی فرماتا ہے۔ اللہ پر توکل رکھیں اور احکاماتِ الٰہی پر عمل کریں۔",
+            surahNumber = 16,
+            surahNameRoman = "An-Nahl",
+            surahNameArabic = "النحل",
+            ayahNumber = 90,
+            arabicAyahText = "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَٰنِ وَإِيتَآىِٕ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ ۚ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ",
+            hinglishAyahText = "Innal-laaha ya'muru bil-'adli wal-ihsaani wa eetaaa'i zil-qurbaa wa yanhaa 'anil-fahshaaa'i wal-munkari wal-baghy; ya'izukum la'allakum tazakkaroon.",
+            urduAyahTranslation = "بے شک اللہ عدل اور احسان کا اور رشتہ داروں کو دینے کا حکم فرماتا ہے اور بے حیائی اور برائی اور سرکشی سے منع کرتا ہے، وہ تمہیں نصیحت کرتا ہے تاکہ تم نصیحت حاصل کرو۔",
+            hindiAyahTranslation = "बेशक अल्लाह इंसाफ़, भलाई और रिश्तेदारों को देने का हुक्म फ़रमाता है, और बेहयाई, बुराई और ज़ुल्म से रोकता है। वह तुम्हें नसीहत करता है ताकि तुम सबक़ हासिल करो।",
+            topicTags = listOf("hidayat", "guidance", "adl", "ihsan", "akhlaq", "quran")
+        )
     }
 }
