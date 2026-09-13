@@ -1,10 +1,12 @@
 package com.example.data
 
+import android.content.Context
 import com.example.util.PreferencesManager
 import kotlinx.coroutines.flow.StateFlow
 
 class QuranRepository(
-    private val preferencesManager: PreferencesManager
+    private val preferencesManager: PreferencesManager,
+    private val context: Context? = null
 ) {
     val quranSettings: StateFlow<QuranDisplaySettings> = preferencesManager.quranSettings
     val lastRead: StateFlow<LastReadPosition> = preferencesManager.lastRead
@@ -19,6 +21,12 @@ class QuranRepository(
     }
 
     fun getAyahsForSurah(number: Int): List<Ayah> {
+        if (context != null) {
+            val assetAyahs = QuranAssetLoader.getAyahsForSurah(context, number)
+            if (assetAyahs.isNotEmpty()) {
+                return assetAyahs
+            }
+        }
         return QuranAyahData.getAyahsForSurah(number)
     }
 
@@ -36,6 +44,10 @@ class QuranRepository(
     }
 
     fun searchAyahs(query: String): List<Ayah> {
+        if (context != null) {
+            val results = QuranAssetLoader.searchAcrossAyahs(context, query)
+            if (results.isNotEmpty()) return results
+        }
         return QuranAyahData.searchAyahs(query)
     }
 

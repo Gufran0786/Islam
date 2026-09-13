@@ -61,7 +61,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val db = AppDatabase.getInstance(application)
     val repository = ProphetRepository(db.prophetDao())
     val preferencesManager = PreferencesManager(application)
-    val quranRepository = com.example.data.QuranRepository(preferencesManager)
+    val quranRepository = com.example.data.QuranRepository(preferencesManager, application)
     val audioRecorder = AudioRecorderHelper(application)
     val audioPlayer = AudioPlayerHelper(application)
     val notificationHelper = NotificationHelper(application)

@@ -1,5 +1,11 @@
 package com.example.data
 
+import com.example.data.quran.QuranEssentialSurahs
+import com.example.data.quran.QuranJuzAmmaPart1
+import com.example.data.quran.QuranJuzAmmaPart2
+import com.example.data.quran.QuranJuzAmmaPart3
+import com.example.data.quran.QuranJuzAmmaPart4
+
 object QuranAyahData {
 
     val ayahs: List<Ayah> = listOf(
@@ -1008,11 +1014,30 @@ object QuranAyahData {
 
     /**
      * Helper to get Ayaat for a Surah.
-     * If the Surah is one of the pre-populated detailed Surahs, returns them directly.
-     * For other Surahs, provides their authentic opening Bismillah and core theme verse
-     * so that the user never encounters an empty or broken screen.
+     * Checks complete, verified Surah data sources first.
      */
     fun getAyahsForSurah(surahNumber: Int): List<Ayah> {
+        // 1. Essential complete Surahs (Al-Fatihah, Al-Jumu'ah, Al-Mulk, Al-Muzzammil)
+        val essential = QuranEssentialSurahs.ayahs.filter { it.surahNumber == surahNumber }
+        if (essential.isNotEmpty()) return essential
+
+        // 2. Juz Amma Part 1 (Surahs 93 to 114 - 100% complete)
+        val part1 = QuranJuzAmmaPart1.ayahs.filter { it.surahNumber == surahNumber }
+        if (part1.isNotEmpty()) return part1
+
+        // 3. Juz Amma Part 2 (Surahs 87 to 92 - 100% complete)
+        val part2 = QuranJuzAmmaPart2.ayahs.filter { it.surahNumber == surahNumber }
+        if (part2.isNotEmpty()) return part2
+
+        // 4. Juz Amma Part 3 (Surahs 82, 85, 86 - 100% complete)
+        val part3 = QuranJuzAmmaPart3.ayahs.filter { it.surahNumber == surahNumber }
+        if (part3.isNotEmpty()) return part3
+
+        // 5. Juz Amma Part 4 (Surah 78 An-Naba - 100% complete)
+        val part4 = QuranJuzAmmaPart4.ayahs.filter { it.surahNumber == surahNumber }
+        if (part4.isNotEmpty()) return part4
+
+        // 6. Curated specific verses from other Surahs
         val specific = ayahs.filter { it.surahNumber == surahNumber }
         if (specific.isNotEmpty()) {
             return specific
@@ -1061,7 +1086,14 @@ object QuranAyahData {
     fun searchAyahs(query: String): List<Ayah> {
         if (query.isBlank()) return emptyList()
         val q = query.trim().lowercase()
-        return ayahs.filter { ayah ->
+        val allAyahs = QuranEssentialSurahs.ayahs +
+                QuranJuzAmmaPart1.ayahs +
+                QuranJuzAmmaPart2.ayahs +
+                QuranJuzAmmaPart3.ayahs +
+                QuranJuzAmmaPart4.ayahs +
+                ayahs
+
+        return allAyahs.distinctBy { "${it.surahNumber}:${it.ayahNumber}" }.filter { ayah ->
             ayah.arabicText.contains(query) ||
             ayah.hinglishText.lowercase().contains(q) ||
             ayah.urduTranslation.contains(query) ||
